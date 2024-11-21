@@ -45,3 +45,13 @@ fun PengelolaanHalaman(
                 navHost.navigate(Halaman.MahasiswaForm.name)
             })
         }
+        composable(route = Halaman.MahasiswaForm.name) {
+            MahasiswaFormView(
+                onSubmitButtonCliked = { listData -> // Ejaan diperbaiki
+                    mahasiswa.value = Mahasiswa(
+                        Nama = listData[0],
+                        Nim = listData[1],
+                        Email = listData[2],
+                        Matakuliah = mahasiswa.value.Matakuliah,
+                        Kelas = mahasiswa.value.Kelas
+                    )
