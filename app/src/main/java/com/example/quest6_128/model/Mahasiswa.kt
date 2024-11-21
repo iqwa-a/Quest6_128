@@ -1,6 +1,7 @@
 package com.example.quest6_128.model
 
 data class Mahasiswa(
+
     val Nim: String = "",
     val Nama: String = "",
     val Email: String = "",

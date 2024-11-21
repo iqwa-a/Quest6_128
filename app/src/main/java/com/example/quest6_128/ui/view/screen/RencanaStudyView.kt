@@ -41,6 +41,7 @@ import com.example.quest6_128.R
 import com.example.quest6_128.data.MataKuliah
 import com.example.quest6_128.data.RuangKelas
 import com.example.quest6_128.model.Mahasiswa
+import com.example.quest6_128.ui.widget.DynamicSelectedTextField
 import kotlinx.coroutines.launch
 
 @Composable
@@ -135,16 +136,6 @@ fun RencanaStudyView(
                         onValueChangeEvent = { chosenDropdown = it }
                     )
 
-                    Spacer(modifier = Modifier.padding(8.dp))
-                    HorizontalDivider()
-                    Spacer(modifier = Modifier.padding(8.dp))
-
-                    Text(text = "Pilih Kelas Belajar", fontWeight = FontWeight.Bold)
-                    Text(
-                        text = "Silakan pilih kelas dari matakuliah yang anda inginkan",
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Light
-                    )
                     Spacer(modifier = Modifier.padding(8.dp))
                     HorizontalDivider()
                     Spacer(modifier = Modifier.padding(8.dp))

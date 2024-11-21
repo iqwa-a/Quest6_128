@@ -5,7 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.R
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,6 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.quest6_128.model.Mahasiswa
+import com.example.quest6_128.R
 
 @Composable
 fun TampilView(
@@ -65,6 +65,7 @@ fun TampilView(
                 )
             }
         }
+
         Spacer(modifier = Modifier.height(16.dp))
 
         Box(
@@ -116,5 +117,19 @@ fun TampilView(
                 }
             }
         }
+    }
+}
+
+// Utility function for a data row
+@Composable
+fun DataRow(label: String, value: String) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(text = "$label:", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+        Text(text = value, fontSize = 16.sp)
     }
 }
