@@ -74,3 +74,10 @@ fun PengelolaanHalaman(
                         Matakuliah = listData[0],
                         Kelas = listData[1]
                     )
+                    navHost.navigate(Halaman.Tampil.name)
+                },
+                onBackButtonCliked = { // Ejaan diperbaiki
+                    navHost.navigateUp()
+                }
+            )
+        }
