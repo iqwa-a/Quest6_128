@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -118,6 +119,24 @@ fun RencanaStudyView(
                         fontWeight = FontWeight.Light
                     )
                     Spacer(modifier = Modifier.padding(8.dp))
+
+                    DynamicSelectedTextField(
+                        selectedValue = chosenDropdown,
+                        options = Matakuliah.option,
+                        label = "Mata Kuliah",
+                        onValueChangeEvent = { chosenDropdown = it }
+                    )
+
+                    Spacer(modifier = Modifier.padding(8.dp))
+                    HorizontalDivider()
+                    Spacer(modifier = Modifier.padding(8.dp))
+
+                    Text(text = "Pilih Kelas Belajar", fontWeight = FontWeight.Bold)
+                    Text(
+                        text = "Silakan pilih kelas dari matakuliah yang anda inginkan",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Light
+                    )
 
 
 
