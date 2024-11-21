@@ -62,3 +62,15 @@ fun PengelolaanHalaman(
                 }
             )
         }
+
+        composable(route = Halaman.RencanaStudy.name) {
+            RencanaStudyView(
+                mahasiswa = mahasiswa.value,
+                onSubmitButtonCliked = { listData -> // Ejaan diperbaiki
+                    mahasiswa.value = Mahasiswa(
+                        Nama = mahasiswa.value.Nama,
+                        Nim = mahasiswa.value.Nim,
+                        Email = mahasiswa.value.Email,
+                        Matakuliah = listData[0],
+                        Kelas = listData[1]
+                    )
