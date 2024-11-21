@@ -2,15 +2,20 @@ package com.example.quest6_128.ui.view.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.R
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -60,3 +65,56 @@ fun TampilView(
                 )
             }
         }
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Box(
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(
+                        topEnd = 15.dp,
+                        topStart = 15.dp
+                    )
+                )
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Column(modifier = Modifier.fillMaxWidth()) {
+                    // Item List
+                    DataRow(label = "Nim", value = uiState.Nama)
+                    DataRow(label = "Nama", value = uiState.Nim)
+                    DataRow(label = "Email", value = uiState.Email)
+                    DataRow(label = "Mata Kuliah", value = uiState.Matakuliah)
+                    DataRow(label = "Kelas", value = uiState.Kelas)
+                }
+
+                Spacer(modifier = Modifier.height(32.dp))
+
+                // Buttons
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Button(
+                        onClick = onBackButtonClicked,
+                        modifier = Modifier.width(120.dp)
+                    ) {
+                        Text(text = "Kembali")
+                    }
+                    Button(
+                        onClick = onSubmitButtonClicked,
+                        modifier = Modifier.width(120.dp)
+                    ) {
+                        Text(text = "Selesai")
+                    }
+                }
+            }
+        }
+    }
+}
