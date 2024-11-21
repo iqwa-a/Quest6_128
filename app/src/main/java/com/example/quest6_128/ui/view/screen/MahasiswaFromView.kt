@@ -63,3 +63,4 @@ fun MahasiswaFormView(
                 )
             }
         }
+        Spacer(modifier = Modifier.padding(top = 16.dp))
