@@ -56,3 +56,10 @@ fun MahasiswaFormView(
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
+                Text(
+                    text = "Unggul Dan Islami",
+                    color = Color.White,
+                    fontWeight = FontWeight.Light
+                )
+            }
+        }
