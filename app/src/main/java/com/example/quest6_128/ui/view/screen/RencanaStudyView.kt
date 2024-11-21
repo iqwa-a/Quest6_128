@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -37,6 +38,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.quest6_128.model.Mahasiswa
+import kotlinx.coroutines.launch
 
 @Composable
 fun RencanaStudyView(
@@ -183,6 +185,29 @@ fun RencanaStudyView(
                     }
 
                     Spacer(modifier = Modifier.padding(8.dp))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        Button(onClick = { onBackButtonCliked() }) {
+                            Text(text = "Kembali")
+                        }
+
+                        Button(onClick = {
+                            coroutineScope.launch {
+                                snackbarHostState.showSnackbar("Data telah disimpan!")
+                            }
+                            onSubmitButtonCliked(listData)
+                        }) {
+                            Text(text = "Simpan")
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 
