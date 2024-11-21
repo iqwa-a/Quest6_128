@@ -7,6 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.quest6_128.model.Mahasiswa
 
@@ -37,4 +38,10 @@ fun PengelolaanHalaman(
         modifier = modifier.fillMaxSize(),
         navController = navHost,
         startDestination = Halaman.Splash.name
-    )
+    ) {
+
+        composable(route = Halaman.Splash.name) {
+            SplashView(onStartClick = {
+                navHost.navigate(Halaman.MahasiswaForm.name)
+            })
+        }
