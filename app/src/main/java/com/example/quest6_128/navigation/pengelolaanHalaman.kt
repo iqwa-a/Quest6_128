@@ -81,3 +81,17 @@ fun PengelolaanHalaman(
                 }
             )
         }
+
+        composable(route = Halaman.Tampil.name) {
+            TampilView(
+                uiState = mahasiswa.value,
+                onBackButtonClicked = {
+                    navHost.navigateUp()
+                },
+                onSubmitButtonClicked = {
+                    navHost.navigate(Halaman.Splash.name) // Atur sesuai kebutuhan
+                }
+            )
+        }
+    }
+}
