@@ -55,3 +55,10 @@ fun PengelolaanHalaman(
                         Matakuliah = mahasiswa.value.Matakuliah,
                         Kelas = mahasiswa.value.Kelas
                     )
+                    navHost.navigate(Halaman.RencanaStudy.name)
+                },
+                onBackButtonCliked = { // Ejaan diperbaiki
+                    navHost.navigateUp()
+                }
+            )
+        }
