@@ -82,4 +82,10 @@ fun MahasiswaFormView(
                     .fillMaxSize()
                     .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
-            )
+            ){
+                Text(
+                    text = "Masukan data",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp
+                )
+
