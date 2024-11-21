@@ -88,4 +88,8 @@ fun MahasiswaFormView(
                     fontWeight = FontWeight.Bold,
                     fontSize = 15.sp
                 )
+                Text(
+                    text = "Lengkapi Data Yang Mau Di Isi",
+                    fontWeight = FontWeight.Light
+                )
 
